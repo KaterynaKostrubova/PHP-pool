@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+}
+
+.humburger {
+  width: 50%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  background: #ddd;
+}
+
+.humburger input {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2; 
+  background: gray;
+}
+
+.humburger span {
+  height: 5px;
+  display: block;
+  width: 50px;
+  background: pink;
+  content: "";
+  position: absolute;
+  top: 10px;
+  margin-left: 10px;
+  z-index: 1;
+}
+
+.humburger span::before {
+  height: 5px;
+  display: block;
+  width: 50px;
+  background: pink;
+  content: "";
+  position: absolute;
+  top: 10px;
+}
+
+.humburger span::after {
+  height: 5px;
+  display: block;
+  width: 50px;
+  background: pink;
+  content: "";
+  position: absolute;
+  top: 20px;
+}
+
+.menu {
+  font-weight: bold;
+  width: 100%;
+  background: pink;
+  position: absolute;
+  left: 0;
+  top: 45px;
+  text-align: center;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  z-index: -1;
+  transition: transform .5s ease, visibility 1s ease, opacity  .5s ease;
+}
+
+.submenu {
+  position: absolute;
+  top:0;
+  left: 100%;
+  min-width: 200px;
+  background: plum;
+  visibility: hidden;
+  opacity: 0; 
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition: .3s linear;  
+}
+
+.second {
+  top:40%;
+}
+
+.menu li:hover > .submenu {
+  transform: rotateX(0deg);
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  display: block;
+  padding: 15px 0;
+  border-bottom: #ddd 1px solid;
+}
+
+.menu ul a {
+  text-decoration: none;
+  color: #666;
+}
+
+.menu ul li:hover {
+  background: #eee;
+}
+
+.menu ul a li:hover  {
+  color: plum;
+}
+
+.humburger input:checked + span::after
+{
+  top: 0px;
+  transform: rotateZ(-90deg);
+  transition: transform .5s ease;
+}
+.humburger input:checked + span::before
+{
+  opacity: 0;
+}
+
+.humburger input:checked + span
+{
+  transform: rotateZ(45deg);
+  transition: transform .5s ease;
+  top: 20px;
+}
+
+.humburger input:checked ~ .menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(2%);
+}

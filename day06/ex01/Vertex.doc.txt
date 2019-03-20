@@ -1,0 +1,17 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles the representation of a point in space.
+It need to include a class Color for correct work of the class.
+
+An instance has tree mandotory parameters as x, y and z:
+new Vertex( array('x' => 2, 'y' => 3, 'z' => 4));
+
+x, y and z have zero value by defaul.
+
+There is also two additional parameters such w (as homogeneous coordinate) and Color:
+$green = new Color( array( 'red' =>   0, 'green' => 255, 'blue' =>   0 ) );
+new Vertex( array('x' => 2, 'y' => 3, 'z' => 4, 'w' => 3.0, 'color' => $green) );
+
+The class doesn't provides any methods. It can only create or destruct 
+the vertex.
+
+---------------------------------------------------------------------- Vertex ->

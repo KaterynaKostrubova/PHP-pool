@@ -1,0 +1,104 @@
+ h1 {
+    text-align: center;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.image {
+    text-align: center;
+}
+table {
+    text-align: center;
+    padding: 0;
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    outline: none;
+}
+
+th {
+    background-color: white;
+    color: grey;
+}
+
+td, th {
+    width: 50px;
+}
+
+td {
+    font-size: large;
+    border-radius: 10px;
+}
+
+tr {
+    height: 50px;
+    background-color: lightgreen;
+}
+
+.empty {
+    background-color: white;
+}
+
+.example {
+    background: pink;
+    font-style: italic;
+}
+
+.example span {
+    display: block;
+    font-size: 75px;
+    font-style: normal;
+   }
+
+.pink {
+    background-color: pink;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: lightgreen;
+}
+
+.darkgreen {
+    background-color: green;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.lightblue {
+    background-color: lightblue;
+}
+
+.coral {
+    background-color: lightcoral;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey{
+    background-color: grey;
+}
+
+.mass {
+    text-align: right;
+    font-size: small;
+    margin: 0 4px;
+    font-style: normal;
+}
+
+.num {
+    text-align: left;
+    font-size: small;
+    margin: 0 4px;
+    font-style: normal;
+}

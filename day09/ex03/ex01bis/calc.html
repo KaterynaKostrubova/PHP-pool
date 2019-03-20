@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<style>
+body {
+	background-color: whitesmoke;
+	padding: 20%;
+	margin: 0;
+}
+ #calculator {
+	width: 60%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 5%;
+	background-color: bisque;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+ }
+ form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ }
+ #first,
+ #second {
+	 width: 40px;
+	 height: 40px;
+	 font-size: 4vh;
+	 text-align: center;
+	 outline: none;
+	 background-color:whitesmoke;
+	 box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	 border: 0;
+	 color:  cadetblue;
+ }
+
+ #operator{
+	width: 80px;
+	height: 25px;
+	text-align: center;
+	outline: none;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	background-color: cadetblue;
+   	border: none;
+   	font-size: 14px;
+	color:  white;
+ }
+
+ #equals {
+	display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 0;
+    -webkit-appearance: none;
+	outline: none;
+	background-color: cadetblue;
+	border: 0;
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+	color: white;
+ }
+
+ #equals:hover {
+	background-color: rgba(143, 167, 136, 0.74);
+	color: #fff;
+ }
+
+ input::placeholder {
+	 color: rgba(163, 153, 153, 0.13);
+ }
+</style>
+<script>
+    window.setInterval(useMe, 30000);
+	$(function(){
+		$('#equals').click(calc);
+		$('#sub').on('submit', function(){
+			return false;
+		})
+    })
+
+	function calc(){
+
+		let first = $('#first').val();
+		let second = $('#second').val();
+		let operator = $('#operator').val();
+		let op = 1;
+
+		let res;
+		let a = parseInt(first);
+		let b =  parseInt(second);
+
+		if (isNaN(a) || isNaN(b) || a < 0 || b < 0){
+			op = 0;
+			alert("Error :(")
+		} else {
+			if (operator === '+'){
+				res = a + b;
+			} else if (operator === '-'){
+				res = a - b;
+			} else if (operator === '*'){
+				res = a * b;
+			} else if (operator === '/' || operator === '%'){
+				if (operator === '/'){
+					res = a / b;
+				} else {
+					res = a % b;
+				} 
+				if (b === 0){
+					op = 0;
+					console.log(res);
+					alert("It’s over 9000!");
+				}
+			} else {
+				op = 0;
+				alert("operator not found");
+			}
+		}
+		if (op != 0) {
+			console.log(res);
+			alert(res);
+		}
+	}
+
+    function useMe(){
+       alert("Please, use me...");
+    }
+</script>
+<body>
+    <div id="calculator">
+            <form id="sub">
+                <p><input type="text" id="first" value="" placeholder="5"></p>
+                <p class="select"><select size="1" id="operator">
+                        <option selected disabled>Select</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="%">%</option>
+                    </select></p>
+                <p><input type="text" id="second" value="" placeholder="4"></p>
+                <p><input type="submit" id="equals" value="Try me!"></p>
+            </form>
+    </div>
+</body>
+</html>

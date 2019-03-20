@@ -1,0 +1,44 @@
+<- Vector ----------------------------------------------------------------------
+The Vector class handles the representation of vector.
+It need to include a class Vertex and class Color for correct work of the class.
+
+A vector is represented by the following characteristics:
+x, y, z and w. (x = 0, y = 0, z = 0, w = 1 by default).
+
+An intance has one mandotory parameter - destination point:
+new Vector( array('dest' => new Vertex( array('x' => 2, 'y' => 3, 'z' => 4))));
+It is also can have another additional parameter such as origin point.
+If that point will not be presented, it wil be created with defaul value -
+x = 0, y = 0, z = 0, w = 1.
+
+The class provides the following methods :
+
+float	magnitude();
+returns the vector’s length.
+
+Vector	normalize();
+Returns a normalized version of the vector. If the vector is
+already normalized, returns a fresh copy of the vector.
+
+Vector add( Vector $rhs );
+Returns the sum vector of both vectors.
+
+Vector sub( Vector $rhs );
+Returns the difference vector of both vectors.
+
+Vector opposite();
+Returns the opposite vector.
+
+Vector scalarProduct( $k );
+Returns the multiplication of the vector with a scalar.
+
+float dotProduct( Vector $rhs );
+Returns the scalar multiplication of both vectors.
+
+float cos( Vector $rhs );
+Returns the angle’s appendix cosine between both vectors.
+
+Vector crossProduct( Vector $rhs );
+Returns the cross multiplication of both vectors.
+
+---------------------------------------------------------------------- Vector ->

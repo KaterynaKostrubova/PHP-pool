@@ -1,0 +1,1 @@
+DELETE FROM db_kkostrub.ft_table LIMIT 5;

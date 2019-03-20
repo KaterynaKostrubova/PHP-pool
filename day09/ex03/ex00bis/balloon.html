@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ballon</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<style>
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+ }
+
+#balloon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: red;
+    margin: 20% auto;
+}
+</style>
+<script>
+    let size = 200;
+    let colorArr = ['#ff0000', '#00ff00', '#0000ff'];
+    let len = colorArr.length;
+    let index = 0;
+
+    $(function() {
+        let balloon = $('#balloon');
+            balloon.click(mouseClick);
+            balloon.mouseleave(mouseHover);
+    })
+
+    function mouseHover(){
+        index--;
+        if (index < 0) {
+            index = len - 1;
+        }
+        $('#balloon').css('background-color', colorArr[index]);
+        if (size == 200) {
+            size = 200;
+        } else {
+            size -= 5;
+        }
+        $('#balloon').css('width', size + "px").css('height', size + "px");
+    }
+
+    function mouseClick(){
+        index++;
+        size += 10;
+        if (index >= len) {
+            index = 0;
+        }
+        $('#balloon').css('background-color', colorArr[index]);
+        if (size > 420) {
+            size = 200;
+        }
+        $('#balloon').css('width', size + "px").css('height', size + "px");
+    }
+</script>
+<body>
+    <div id="balloon"></div>
+</body>
+</html>
