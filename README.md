@@ -14,6 +14,6 @@ This is a project where I have 2 weeks of intensive study of basic web technolog
 | [Day 05](https://github.com/KaterynaKostrubova/PHP-pool/tree/master/day05) | SQL |
 | [Day 06](https://github.com/KaterynaKostrubova/PHP-pool/tree/master/day06) | Object-Oriented PHP |
 | [Day 07](https://github.com/KaterynaKostrubova/PHP-pool/tree/master/day07) | Object-Oriented PHP |
-| [Day 08] | Object-Oriented PHP |
+| Day 08 | Object-Oriented PHP |
 | [Day 09](https://github.com/KaterynaKostrubova/PHP-pool/tree/master/day09) | Javascript / Ajax|
-| [Rush 01] | 48 hours to build a game |
+| Rush 01 | 48 hours to build a game |
